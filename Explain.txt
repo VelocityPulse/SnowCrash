@@ -1,0 +1,5 @@
+# Explanations of steps for level
+
+Let try to su flag00.
+
+Token for level01 is: "

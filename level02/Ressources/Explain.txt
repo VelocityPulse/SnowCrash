@@ -1,0 +1,12 @@
+# Explanations of steps for level02
+
+We can see an .pcap fil in the home, let down load it
+	scp -P 4242 level02@IP.Of.THE.VM:level02.pcap ~/
+
+let see what it says at https://cloudshark.org/captures/  sign in and upload the file
+We can see when read packets it send a user and a password: We can see the password : "ft_wandr...NDRel.L0L".
+We can see in hex code the ascii value of these no printable char: its 7f, represent delete ascii value.
+Then each '.' represent a del so we deduce the flag is : "ft_waNDReL0L"
+Let try to su flag02.
+
+Token for level03 is: "kooda2puivaav1idi4f57q8iq"
