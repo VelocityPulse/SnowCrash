@@ -6,9 +6,12 @@ Projet introductif à la sécurité en informatique, Snow Crash a pour but de fa
 
 ## Objectives
 Script perl/python/shell
+
 ASM
 
 ## Skills
 Adaptation & creativity
+
 Unix
+
 Security 
