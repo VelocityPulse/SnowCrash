@@ -28,6 +28,7 @@ first, let do a symbolic link on our file /tmp/temp
 Now let at the same time, execute the binary file and relink the LS on the "token" file.
 So let do a script who listen on the port 6969, and put in a file, launch the binary in loop, swap LS in while to try to get once or more, the good timing. Let launch the script !
 
+look the output or look at /tmp/token10 if you saved it here
 we now got the flag : "woupa2yuojeeaaed06riuj63c"
 
 Let try to su flag10.
