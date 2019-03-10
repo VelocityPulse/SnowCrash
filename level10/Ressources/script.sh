@@ -1,6 +1,6 @@
 #!/bin/bash
 touch /tmp/temp
-(while true; do nc -l 6969 >> /tmp/token ; done)&
+(nc -lk 6969)&
 pid1=$!
 (while true; do $HOME/level10 /tmp/temp2 127.0.0.1 &>/dev/null; done)&
 pid2=$!
@@ -9,7 +9,7 @@ pid3=$!
 sleep 1
 cat /tmp/token
 echo ""
-echo "/\\ found the token somewhere between banners /\\"
+echo "/\\ Enjoy ! found the token somewhere between banners /\\"
 kill $pid1&
 kill $pid2&
 kill $pid3&
