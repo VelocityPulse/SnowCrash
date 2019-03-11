@@ -1,0 +1,38 @@
+# Explanations of steps for level14
+
+We can see there is nothing in the home, after some find command, nothing more.
+We try to launch getflag, but it dont print any token
+We just remember the last level, and think about gdb the binary getflag file, but first let string and objdump it
+	strings /bin/getflag
+	objdump -s /bin/getflag
+
+Let check the flag14 UID on the file /etc/passwd
+We can see a ptrace() fuction called, so it look int the RAM if we dont read on and use a getuid
+	gdb /bin/getflag
+	disas main
+
+let set 2 breakpoint, first after the test of ptrace() to change his return value, or getflag will know gdb is launched, second one like last level, at the getuid() return check to put the flag14 User ID
+	b *[ADDR_CMP_PTRACE]
+	b *[ADDR_CMP_GETUID]
+
+then run the program
+	run
+
+first breakpoint, we can see the registers
+	info registers
+
+and see the ptrac() return value to "-1", so let chage it to "0"
+	p $eax = 0
+
+let try to continue
+	continue
+
+It works, 2nd breakpoint, let do like last level
+	info registers
+	p $eax = 3014
+
+let continue, Enjoy, your token is printed : "7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ"
+
+Let try to su flag14.
+
+Last token is: "7QiHafiNa3HVozsaXkawuYrTstxbpABHD8CPnHJ"
