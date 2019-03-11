@@ -4,7 +4,7 @@ We can see a binary and a file "token" in the home
 the file token contain a list of char, some are non printable
 we can see the binary need an argument, and change the string passed at parameter
 we can test it
-	./level09 aaaaa
+	$HOME/level09 aaaaa
 
 Its output "abcde", So we deduce it ad the index to the ascii value of a char
 So let write a program in /tmp who reverse this algo, let set the char - index of char

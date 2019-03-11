@@ -2,7 +2,7 @@
 
 We can see there is nothing in the home, after some find command, nothing more.
 We try to launch getflag, but it dont print any token
-We just remember the last level, and think about gdb the binary getflag file, but first let string and objdump it
+We just remember the last level, and think about gdb the binary getflag file, but first let strings and objdump it
 	strings /bin/getflag
 	objdump -s /bin/getflag
 

@@ -2,8 +2,9 @@
 
 we can see a binary file in the home directory with flag07 rights, let excute it
 we can si is printing "level07"
-let strings the binary file
+let strings and objdump the binary file
 	strings $HOME/level07
+	objdump -s $HOME/level07
 
 we can see a function "getenv" and an "echo %s"
 let see env variables

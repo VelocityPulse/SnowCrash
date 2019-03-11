@@ -9,8 +9,9 @@ it say we cant access, we can see if we do
 
 it printing the content of file
 
-after looking the binary on strings
-	strings level08
+after looking the binary on strings and objdump
+	strings $HOME/level08
+	objdump -s $HOMe/level08
 
 we can see the token is hard wrote in the code.
 let do a symbolic link to the "token" file to pass it to the binary

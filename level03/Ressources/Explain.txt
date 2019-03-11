@@ -2,7 +2,10 @@
 
 we can see a binary file with flag03 rights on in the home
 We can see at the execution its print "Exploit me"
-Let strings the Binary file to see what is inside
+Let strings and objdump the Binary file to see what is inside
+	strings $HOME/level03
+	objdump -s $HOME/level03
+
 We can see the Exploit me is executed with an echo and the env passed
 So let try to copy /bin/getflag in /tmp/echo, and replace the env PATH
 	cp /bin/getflag /tmp/echo
