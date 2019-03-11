@@ -7,7 +7,7 @@ we can see the file already launched, at a cat we can see it launch a server on 
 	nc 127.0.0.1 5151
 
 it asking a password.
-At "cat" we can see a login function, with a password passed to a parameter of popen() and hashed with sha1sum.
+With cat we can see a login function, with a password passed to a parameter of popen() and hashed with sha1sum.
 We can see the Hashed password in hard, first let try to hack the hashed pass.
 On the site : https://md5hashing.net
 we can see the string hacked "NotSoEasy", let try to su flag11, password not match.
