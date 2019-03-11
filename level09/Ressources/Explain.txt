@@ -9,10 +9,10 @@ we can test it
 Its output "abcde", So we deduce it ad the index to the ascii value of a char
 So let write a program in /tmp who reverse this algo, let set the char - index of char
 write a C file and compile it in tmp
-	gcc /tmp/decode.c -o /tmp/decode
+	gcc /tmp/decode09.c -o /tmp/decode09
 
 at least, we cat pass the string in the file "token" as parameter of our program
-	/tmp/decode `cat token`
+	/tmp/decode09 `cat token`
 
 and see the output : "f3iji1ju5yuevaus41q1afiuq"
 

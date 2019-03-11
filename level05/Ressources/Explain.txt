@@ -11,5 +11,6 @@ We cant execute it, let cat the file
 We can see the script is executing each script in /opt/openarenaserver
 So write the script.sh in /opt/openarenaserver
 Let wait 30 sec max and then see the token.
+	cat /tmp/token05
 
 Token for level06 is: "viuaaale9huek52boumoomioc"

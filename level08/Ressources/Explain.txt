@@ -4,8 +4,8 @@ we can see "token" file and a binary file in the home directory.
 let cat token file : premission denied, let execute the binary
 we can see he need a file, let execute it with the file "token"
 it say we cant access, we can see if we do
-	echo "test" > /tmp/level08
-	./level08 /tmp/level08
+	echo "test" > /tmp/temp08_1
+	$HOME/level08 /tmp/temp08_1
 
 it printing the content of file
 
@@ -14,8 +14,8 @@ after looking the binary on strings
 
 we can see the token is hard wrote in the code.
 let do a symbolic link to the "token" file to pass it to the binary
-	ln -s $HOME/token /tmp/level08_1
-	./level08 /tmp/level08_1
+	ln -s $HOME/token /tmp/temp08
+	$HOME/level08 /tmp/temp08
 
 we can see its printing a key file : "quif5eloekouj29ke0vouxean"
 Let try to su flag08.

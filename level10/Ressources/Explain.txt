@@ -5,25 +5,25 @@ We cant access to "token" file, binary need a file and a ip host
 
 let strings and objdump the binary to see what ts print
 	strings level10
-	objdump -s ./level10
+	objdump -s $HOME/level10
 
 we can see he try to connect to an host on port 6969 access on a file, open it and then send the content of the file the host.
 
 After test passing "token" file and 127.0.0.1 (only on IP, there is no "hostbyname" function), it return we dont have the access.
 After create a file
-	echo "test" > /tmp/temp
-	./level10 /tmp/temp 127.0.0.1
+	echo "test" > /tmp/temp10
+	$HOME/level10 /tmp/temp10 127.0.0.1
 
 We can see it say he can't access to localhost on port 6969. so launch a nc in back job
 	nc -l 6969&
-	./level10 /tmp/temp 127.0.0.1
+	$HOME/level10 /tmp/temp10 127.0.0.1
 
 we can see ".*( )*." and the file printed with the level10 program verbose
 We remember the "access" function is called before the "open" function, the interval is short, but we can change the file between these 2 operations.
 
 So there is some way to do it with symbolic link
 first, let do a symbolic link on our file /tmp/temp
-	ln -s /tmp/temp /tmp/temp2
+	ln -s /tmp/temp10 /tmp/temp10_1
 
 Now let at the same time, execute the binary file and relink the LS on the "token" file.
 So let do a script who listen on the port 6969, and put in a file, launch the binary in loop, swap LS in while to try to get once or more, the good timing. Let launch the script !
