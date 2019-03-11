@@ -7,6 +7,7 @@ while true; do
     if [ -n $ret ]; then
     	break
     fi
+    sleep 1
 done
 
 echo $ret
