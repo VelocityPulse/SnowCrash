@@ -7,7 +7,7 @@ Let's download the passwd file
 Now let's install john and launch it on the passwd file
 	john $HOME/passwd_sc
 
-We cam see see the password, cracked by of flag01 : "abcdefg"
+We can see the password, cracked by of flag01 : "abcdefg"
 let's su flag01
 
 The token for level02 is : "f2av5il02puano7naaf6adaaf"
