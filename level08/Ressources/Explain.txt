@@ -1,24 +1,24 @@
 # Explanations of steps for level08
 
-we can see "token" file and a binary file in the home directory.
-let cat token file : premission denied, let execute the binary
-we can see he need a file, let execute it with the file "token"
-it say we cant access, we can see if we do
+We can see a "token" file and a binary file in the home directory.
+Let's cat token file : premission denied, let's execute the binary
+We can see he needs a file, let's execute it with the file "token"
+It says we can't access, we can see if we do
 	echo "test" > /tmp/temp08_1
 	$HOME/level08 /tmp/temp08_1
 
-it printing the content of file
+It print the content of file
 
-after looking the binary on strings and objdump
+After looking the binary on strings and objdump
 	strings $HOME/level08
 	objdump -s $HOMe/level08
 
-we can see the token is hard wrote in the code.
-let do a symbolic link to the "token" file to pass it to the binary
+We can see "token" is hard wrote in the code.
+Let's do a symbolic link to the "token" file to pass it to the binary
 	ln -s $HOME/token /tmp/temp08
 	$HOME/level08 /tmp/temp08
 
-we can see its printing a key file : "quif5eloekouj29ke0vouxean"
-Let try to su flag08.
+We can see its printing a key file : "quif5eloekouj29ke0vouxean"
+Let's try to su flag08.
 
 Token for level09 is: "25749xKZ8L7DkSCwJkT9dyv6f"

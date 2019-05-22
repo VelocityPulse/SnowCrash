@@ -1,6 +1,6 @@
 # Explanations of steps for level05
 
-when connecting in ssh, we can see "You have a new mail."
+When connecting in ssh, we can see "You have a new mail."
 So let cat this mail
 	cat /var/mail/level05
 
@@ -9,11 +9,11 @@ We cant execute it, let cat the file
 	cat /usr/sbin/openarenaserver
 
 We can see the script is executing each script in /opt/openarenaserver
-So write the script.sh in /opt/openarenaserver
+So write a two line script.sh in /opt/openarenaserver with echo
 	echo "#!/bin/bash" > /opt/openarenaserver/script.sh
 	echo "getflag > /tmp/token05" >> /opt/openarenaserver/script.sh
 
-Let wait 30 sec max and then see the token.
+Let's wait 30 sec max and then see the token.
 	cat /tmp/token05
 
 Token for level06 is: "viuaaale9huek52boumoomioc"

@@ -1,19 +1,19 @@
 # Explanations of steps for level07
 
-we can see a binary file in the home directory with flag07 rights, let excute it
-we can si is printing "level07"
-let strings and objdump the binary file
+We can see a binary file in the home directory with flag07 rights, let's excute it
+We can see "level07" printed
+Let's strings and objdump the binary file
 	strings $HOME/level07
 	objdump -s $HOME/level07
 
-we can see a function getenv() and an "echo %s"
-let see env variables
+We can see the function getenv() and an "echo %s"
+Let's see env variables
 	env
 
-we can see 2 variable set as "level07", one is USR, one is "LOGNAME" variable
-let set the LOGNAME var to the getflag command
+We can see 2 variable set as "level07", one is USR, one is "LOGNAME" variable
+Let's set the LOGNAME var to the getflag command
 	LOGNAME='$(getflag)'
 
-when executing the binary file with flag07 rights, we can see the getflag printed : echo printed the result of getflag command
+When executing the binary file with flag07 rights, we can see the getflag printed : echo printed the result of getflag command
 
 Token for level08 is: "fiumuikeil55xe9cu4dood66h"

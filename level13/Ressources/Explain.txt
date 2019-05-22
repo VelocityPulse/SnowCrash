@@ -1,29 +1,34 @@
 # Explanations of steps for level13
 
-We can see a binary in the home directory, at the execution, it says it need the "4242" User ID to launch it
-let strings and objdump the file
+We can see a binary in the home directory, at the execution, it says it need the
+"4242" User ID to launch it
+let's strings and objdump the file
 	strings $HOME/level13
 	objdump -s $HOME/level13
 
-We can see "Your token is:" string, o the program will certainly print the token, we also can see the token string, but it is hashed
-We also can see the getuid() functions called in the code, so we have to fake our User ID for launch the program
-After some tests, we remember we can changes registry value with GDB and disassembly the code to see where its called
+We can see "Your token is:" string, so the program will certainly print the token,
+we can also see the token string, but it is hashed
+We can also see the getuid() functions called in the code, so we have to fake our User ID
+for launch the program
+After some tests, we remember we can changes registry value with GDB
+and disassembly the code to see where its called
 	gdb $HOME/level13
 	disas main
 
-we can see the getuid() call and the compare of the return value just after, so we set a breakpoint at the compare
+We can see the getuid() call and the compare of the return value just after,
+so we set a breakpoint at the compare
 	b *[ADDR_]
 
-Let run the program
+Let's run the program
 	run
 
-we are now on the breakpoint, let see the value of currents registers
+We are now on the breakpoint, let's see the values of currents registers
 	info registers
 
-And se eax with our UID, so let change it to 4242
+We can see eax with our UID, so let change it to 4242
 	p $eax = 4242
 
-and continue the program
+Continue the program
 	continue
 
 Enjoy, there is our token printed !

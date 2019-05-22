@@ -1,17 +1,17 @@
 # Explanations of steps for level09
 
 We can see a binary and a file "token" in the home
-the file token contain a list of char, some are non printable
-we can see the binary need an argument, and change the string passed at parameter
-we can test it
+The file token contain a list of char, some are non printable
+We can see the binary need an argument, and change the string passed at parameter
+We can test it
 	$HOME/level09 aaaaa
 
-Its output "abcde", So we deduce it ad the index to the ascii value of a char
+It output "abcde", So we deduce it adds the index to the ascii value of a char
 So let write a program in /tmp who reverse this algo, let set the char - index of char
-write a C file and compile it in tmp
+write a C file and compile it in tmp (after having done a cd in tmp)
 	gcc /tmp/decode09.c -o /tmp/decode09
 
-at least, we cat pass the string in the file "token" as parameter of our program
+At least, we cat pass the string in the file "token" as parameter of our program
 	/tmp/decode09 `cat token`
 
 and see the output : "f3iji1ju5yuevaus41q1afiuq"

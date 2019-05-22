@@ -1,16 +1,16 @@
 # Explanations of steps for level00
 
-1st, let see the /etc/passwd file, We can see only a flag01 passwd here.
+1st, let's see the /etc/passwd file, We can see only a flag01 passwd here.
 We can see there is nothing in home folder then do a find
 	find / -user flag00
 
-We can see there is to identic files in /usr/sbin and rofs/usr/sbin/ called  "john" but read-only
+We can see there is two identic files in /usr/sbin and rofs/usr/sbin/ called  "john" but read-only
 	cat /usr/sbin/john
 
 We can see a string output : "cdiiddwpgswtgt"
-We suppose its a ROT on char, like Cesar Code. Lets brutforce it on http://dcode.fr
+We suppose it's a ROT on char, like Cesar Code. Lets brutforce it on http://dcode.fr
 
-We can see an output string : "nottoohardhere" from all supposition, only one get real words.
+We can see an output string : "nottoohardhere" from all supposition, only one gets real words.
 
 Let try to su flag00.
 

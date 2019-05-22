@@ -1,25 +1,28 @@
 # Explanations of steps for level11
 
-We can see a .lua file executable in the home and flag11 rights, iat execution, it say "address in use" and after a 
+We can see a .lua file executable in the home and flag11 rights, 
+at execution, it says "address in use" and after a :
 	ps aux | grep level11
 
-we can see the file already launched, at a cat we can see it launch a server on port 5151. so let try to connect with nc
+We can see the file already launched, at a cat we can see it launch a server on port 5151.
+So let's try to connect with nc
 	nc 127.0.0.1 5151
 
-it asking a password.
-With cat we can see a login function, with a password passed to a parameter of popen() and hashed with sha1sum.
-We can see the Hashed password in hard, first let try to hack the hashed pass.
+It asks a password.
+With cat we can see a login function, with a password passed to popen() as a parameter,
+and hashed with sha1sum.
+We can see the Hashed password in hard, first let's try to hack the hashed pass.
 On the site : https://md5hashing.net
-we can see the string hacked "NotSoEasy", let try to su flag11, password not match.
+We can see the string hacked "NotSoEasy", su on flag11 doesn't work.
 
-We can now try to inject some code to the password passed in popen(), to execute getflag
-let connect and set the password to inject getflag command with a ";" to finish the "echo" command and a "wall" cammand who print the output on all current tty, because without, it will print only for "server" tty,
+We can now try to inject some code to the program passing by popen(), to execute getflag.
+Let's connect and set the password as an injection getflag command with a ";"
 	nc 127.0.0.1 5151
 	; getflag > /tmp/token11
 or
 	echo "; getflag > /tmp/token11" | nc 127.0.0.1 5151
 
-We can now see the /tmp/token file with the output
+We can see the /tmp/token file with the output
 	cat /tmp/token11
 
 Token for level12 is: "fa6v5ateaw21peobuub8ipe6s"
